@@ -6,6 +6,7 @@
 package com.andre.usuariossql;
 
 import com.andre.usuariossql.view.TelaPrincipal;
+import com.andre.usuariossql.view.TelaUsuarios;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;

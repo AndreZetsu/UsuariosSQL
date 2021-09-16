@@ -18,7 +18,7 @@ public class usuariosDAO extends ConexaoPostgres{
         List<Usuarios> lUsuarios = new LinkedList<>();
         try{
             this.conectar();
-            String sql = "SELECT * FROM DEPARTAMENTO ORDER BY CODIGO";
+            String sql = "SELECT * FROM USUARIOS ORDER BY CODIGO";
             PreparedStatement ps = this.getCon().prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

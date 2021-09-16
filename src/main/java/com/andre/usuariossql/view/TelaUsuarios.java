@@ -12,16 +12,17 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author lucas
+ * @author andre
  */
 public class TelaUsuarios extends javax.swing.JInternalFrame {
     
-    private final ObjectTableModel<Usuarios> otmDepartamento = new ObjectTableModel<>(Usuarios.class, "codigo,descricao");
+    private final ObjectTableModel<Usuarios> otmUsuarios = new ObjectTableModel<>(Usuarios.class, "codigo, nome, perfil, login, senha");
     
-    private final usuariosControl departamentoControl = new usuariosControl();
-
+    private final usuariosControl usuariosControl = new usuariosControl();
+    
+    private Usuarios usuarios;
     /**
-     * Creates new form TelaDepartamento
+     * Creates new form TelaUsuarios
      */
     public TelaUsuarios() {
         initComponents();
@@ -31,7 +32,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
     private void carregarGrade() {
         
         try {      
-            otmDepartamento.setData(departamentoControl.listarTodos());
+            otmUsuarios.setData(usuariosControl.listarTodos());
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Erro ao carregar grade.\n" + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
@@ -54,7 +55,7 @@ public class TelaUsuarios extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Tela de Usuarios");
 
-        jTable1.setModel(otmDepartamento);
+        jTable1.setModel(otmUsuarios);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
